@@ -1,0 +1,18 @@
+[
+    {
+        "name": "혼자만의 저녁",
+        "description": "따뜻한 식사와 휴식으로 하루를 마무리",
+        "steps": [
+            { "time": "20:00", "title": "DINNER", "description": "따뜻한 저녁 식사로 회복하기" },
+            { "time": "21:00", "title": "CONTENT", "description": "편안한 콘텐츠로 휴식하기" }
+        ]
+    },
+    {
+    "name": "친구와 수다",
+    "description": "가벼운 대화와 야외 활동으로 스트레스 해소",
+    "steps": [
+        { "time": "19:30", "title": "MEET", "description": "친구 만나 수다 떨기" },
+        { "time": "21:00", "title": "WALK", "description": "근처 산책로 걷기" }
+        ]
+    }
+]
