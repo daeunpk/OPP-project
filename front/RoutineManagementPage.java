@@ -2,6 +2,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import javax.swing.JCheckBox;
+
 
 public class RoutineManagementPage extends JFrame {
 
@@ -20,7 +22,7 @@ public class RoutineManagementPage extends JFrame {
 
         JLabel titleLabel = new JLabel("루틴 관리");
         titleLabel.setFont(new Font("dialog", Font.BOLD, 24));
-        titleLabel.setForeground(Color.WHITE);
+        titleLabel.setForeground(new Color(255, 244, 225));
         titleLabel.setBounds((frameWidth - 200) / 2, 40, 200, 40);
         add(titleLabel);
 
@@ -42,7 +44,7 @@ public class RoutineManagementPage extends JFrame {
         JTable table = new JTable(model);
         table.setRowHeight(30);
         table.getColumn("관리").setCellRenderer(new ButtonRenderer());
-        table.getColumn("관리").setCellEditor(new ButtonEditor(new JCheckBox()));
+        table.getColumn("관리").setCellEditor(new ButtonEditor(new JCheckBox(), table));
 
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds((frameWidth - 800) / 2, 100, 800, 300); // 가운데 정렬 + 사이즈 지정
@@ -70,9 +72,11 @@ public class RoutineManagementPage extends JFrame {
         private JButton button;
         private boolean clicked;
         private int selectedRow;
+        private JTable table; // 👉 JTable 참조 추가
 
-        public ButtonEditor(JCheckBox checkBox) {
+        public ButtonEditor(JCheckBox checkBox, JTable table) {
             super(checkBox);
+            this.table = table;
             button = new JButton("삭제");
             button.setOpaque(true);
 
@@ -93,7 +97,8 @@ public class RoutineManagementPage extends JFrame {
         public Object getCellEditorValue() {
             if (clicked) {
                 System.out.println("루틴 삭제 처리: " + selectedRow + "번째 사용자");
-                ((DefaultTableModel) ((JTable) getComponent()).getModel()).removeRow(selectedRow);
+                DefaultTableModel model = (DefaultTableModel) table.getModel(); // ✅ 테이블 모델 사용
+                model.removeRow(selectedRow); // ✅ 삭제 처리
             }
             clicked = false;
             return "삭제";
@@ -106,7 +111,9 @@ public class RoutineManagementPage extends JFrame {
         }
     }
 
+
     public static void main(String[] args) {
         new RoutineManagementPage();
     }
 }
+
