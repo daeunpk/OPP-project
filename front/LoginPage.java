@@ -24,6 +24,18 @@ public class LoginPage extends JFrame {
         titleLabel.setBounds((frameWidth - 250) / 2, 80, 250, 30);
         panel.add(titleLabel);
 
+        JPanel topPanel = new JPanel(new BorderLayout());
+        topPanel.setBackground(new Color(13, 39, 84));
+        topPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.LIGHT_GRAY));
+
+        JLabel TitleLabel = new JLabel("GOODBYE-OFFICE");
+        TitleLabel.setForeground(Color.WHITE);
+        TitleLabel.setFont(new Font("Dialog", Font.BOLD, 18));
+        TitleLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 0));
+        TitleLabel.setBackground(new Color(13, 39, 84));
+        topPanel.add(TitleLabel, BorderLayout.WEST);
+        add(topPanel, BorderLayout.NORTH);
+
         // 사번 라벨
         JLabel idLabel = new JLabel("사번:");
         idLabel.setForeground(Color.WHITE);
@@ -71,3 +83,4 @@ public class LoginPage extends JFrame {
         setVisible(true);
     }
 }
+
