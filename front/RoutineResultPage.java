@@ -32,7 +32,8 @@ public class RoutineResultPage extends JFrame {
         // 라디오 버튼 글자 색 흰색으로 설정
         jsonOption.setForeground(Color.WHITE);
         txtOption.setForeground(Color.WHITE);
-
+        jsonOption.setBackground(new Color(13, 39, 84));
+        txtOption.setBackground(new Color(13, 39, 84));
         ButtonGroup group = new ButtonGroup();
         group.add(jsonOption);
         group.add(txtOption);
@@ -58,3 +59,4 @@ public class RoutineResultPage extends JFrame {
         setVisible(true);
     }
 }
+
