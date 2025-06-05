@@ -17,7 +17,7 @@ public class AdminDashboardPage extends JFrame {
         // 제목 라벨
         JLabel title = new JLabel("전체 통계 요약");
         title.setFont(new Font("맑은 고딕", Font.BOLD, 24));
-        title.setForeground(Color.WHITE);
+        title.setForeground(new Color(245, 245, 220));
         title.setBounds((frameWidth - 300) / 2, 80, 300, 40);
         title.setHorizontalAlignment(SwingConstants.CENTER);
         add(title);
@@ -25,7 +25,7 @@ public class AdminDashboardPage extends JFrame {
         // 오늘 이용자 수 라벨
         JLabel todayUsers = new JLabel("오늘 이용자 수: 25,394명");
         todayUsers.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
-        todayUsers.setForeground(Color.WHITE);
+        todayUsers.setForeground(new Color(245, 245, 220));
         todayUsers.setBounds((frameWidth - 300) / 2, 140, 300, 30);
         todayUsers.setHorizontalAlignment(SwingConstants.CENTER);
         add(todayUsers);
